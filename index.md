@@ -14,7 +14,7 @@ I am a graduate student in the statistical data science program at San Francisco
 ## Projects
 - **Credit Approval** — Using statistical learning methods to predict credit approval. [Repo](https://github.com/NicKane12/credit-approval-statistical-learning)
 - **Vinyl Sales Analysis** — Using time series analysis to forecast future vinyl sales. [Repo](https://github.com/NicKane12/time-series-vinyl-sales)
-- **Death from heart disease** — Using categorical models to predict death from heart disease. [Repo](#) 
+- **Death from heart disease** — Using categorical models to predict death from heart disease. [Repo]() 
 
 ## Experience
 - **Math/Music Instructor, Fusion Academy** (2019-2026) — Taught one-on-one math and music courses from 6th to 12th grade. Covered all high school math courses and 
@@ -22,5 +22,5 @@ I am a graduate student in the statistical data science program at San Francisco
 
 ## Contact
 - Email: nicmuellerkane@gmail.com
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/nic-kane/)
-- GitHub: [Github](https://github.com/nickane12)
+- LinkedIn: [![LinkedIn]](https://www.linkedin.com/in/nic-kane/)
+- GitHub: [!Github]](https://github.com/nickane12)
