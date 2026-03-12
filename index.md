@@ -1,15 +1,15 @@
 ---
-title: Home
+Nic Kane's Portfolio: Home
 ---
 
 <img src="IMG_2300.jpg" width="160" style="border-radius: 50%;" />
 
 # Nic Kane
 
-Short tagline (e.g., “Software Engineer | ML | Robotics”)
+Data Science Student looking to apply R and Python for machine learning.
 
 ## About
-Write 3–6 lines about who you are, what you do, and what you’re looking for.
+I am a graduate student in the statistical data science program at San Francisco State. I have experience teaching mathematics for about 7 years, and am passionate about using mathematics to improve and analyze the world around us. Data science is a perfect middle ground between pure mathemtical analysis and application. My goal is to find an internship or job applying my technical and communicative skills.
 
 ## Projects
 - **Project 1** — one line description. [Repo](#) · [Demo](#)
@@ -22,5 +22,5 @@ Write 3–6 lines about who you are, what you do, and what you’re looking for.
 
 ## Contact
 - Email: nicmuellerkane@gmail.com
-- LinkedIn: [https://linkedin.com/in/nic-kane](https://www.linkedin.com/in/nic-kane/)
-- GitHub: [https://github.com/nickane12](https://github.com/nickane12)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/nic-kane/)
+- GitHub: [Github](https://github.com/nickane12)
