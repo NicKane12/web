@@ -2,6 +2,8 @@
 title: Home
 ---
 
+<img src="IMG_2300.jpg" width="160" style="border-radius: 50%;" />
+
 # Your Name
 
 Short tagline (e.g., “Software Engineer | ML | Robotics”)
