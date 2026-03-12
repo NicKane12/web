@@ -17,8 +17,8 @@ I am a graduate student in the statistical data science program at San Francisco
 - **Death from heart disease** — Using categorical models to predict death from heart disease. [Repo](#) 
 
 ## Experience
-- **Math/Music Instructor, Fusion Academy** (Year–Year) — 1–2 bullets
-- **Role, Company** (Year–Year) — 1–2 bullets
+- **Math/Music Instructor, Fusion Academy** (2019-2026) — Taught one-on-one math and music courses from 6th to 12th grade. Covered all high school math courses and 
+- **Math GTA, SF State** (2025) — Taught a precalculus course for freshman STEM students. Led group work and made and proctored exams and a final project.
 
 ## Contact
 - Email: nicmuellerkane@gmail.com
