@@ -22,5 +22,5 @@ I am a graduate student in the statistical data science program at San Francisco
 
 ## Contact
 - Email: nicmuellerkane@gmail.com
-- LinkedIn: [![LinkedIn]](https://www.linkedin.com/in/nic-kane/)
-- GitHub: [!Github]](https://github.com/nickane12)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/nic-kane/)
+- GitHub: [Github](https://github.com/nickane12)
