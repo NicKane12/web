@@ -6,112 +6,123 @@
   <title>Nic Kane</title>
 
   <style>
-    :root { --max: 880px; }
+  :root {
+    --max: 880px;
+    --accent: #4f46e5;      /* Indigo */
+    --accent-soft: #eef2ff;
+    --bg: #fafafa;
+    --text: #111827;
+    --muted: #4b5563;
+  }
 
-    body {
-      margin: 0;
-      font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      color: #111;
-      background: #fff;
-    }
+  body {
+    margin: 0;
+    font: 16px/1.7 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+  }
 
-    .wrap {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 48px 20px;
-    }
+  .wrap {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 60px 20px;
+  }
 
-    h1 {
-      font-size: 40px;
-      line-height: 1.2;
-      margin: 0 0 8px;
-    }
+  h1 {
+    font-size: 42px;
+    margin: 0 0 8px;
+    letter-spacing: -0.5px;
+  }
 
-    .tagline {
-      margin: 0 0 18px;
-      color: #333;
-    }
+  .tagline {
+    margin: 0 0 20px;
+    color: var(--muted);
+    font-size: 18px;
+  }
 
-    a {
-      color: inherit;
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
+  h2 {
+    font-size: 22px;
+    margin-bottom: 14px;
+    color: var(--accent);
+  }
 
-    a:hover { opacity: 0.8; }
+  a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+  }
 
-    hr {
-      border: 0;
-      border-top: 1px solid #eee;
-      margin: 32px 0;
-    }
+  a:hover {
+    text-decoration: underline;
+  }
 
-    h2 {
-      font-size: 22px;
-      margin: 0 0 14px;
-    }
+  hr {
+    border: 0;
+    border-top: 1px solid #e5e7eb;
+    margin: 40px 0;
+  }
 
-    .toplinks a {
-      margin-right: 14px;
-      white-space: nowrap;
-    }
+  .toplinks a {
+    margin-right: 18px;
+  }
 
-    .small {
-      color: #444;
-    }
+  /* ===== Project Tiles ===== */
 
-    /* ===== Project Tile Grid ===== */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+    margin-top: 20px;
+  }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 16px;
-      margin-top: 16px;
-    }
+  .tile {
+    display: block;
+    padding: 20px;
+    border-radius: 18px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    transition: all 0.15s ease;
+  }
 
-    .tile {
-      display: block;
-      padding: 18px;
-      border: 1px solid #eee;
-      border-radius: 16px;
-      text-decoration: none;
-      background: #fff;
-      transition: transform 0.08s ease, box-shadow 0.08s ease, border-color 0.08s ease;
-    }
+  .tile:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(79, 70, 229, 0.15);
+    border-color: var(--accent);
+  }
 
-    .tile:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 14px 28px rgba(0,0,0,.08);
-      border-color: #ddd;
-    }
+  .tile h3 {
+    margin: 0 0 8px;
+    font-size: 18px;
+    color: var(--text);
+  }
 
-    .tile h3 {
-      margin: 0 0 6px;
-      font-size: 18px;
-      text-decoration: none;
-    }
+  .tile p {
+    margin: 0 0 12px;
+    font-size: 14px;
+    color: var(--muted);
+  }
 
-    .tile p {
-      margin: 0 0 12px;
-      color: #333;
-      font-size: 14px;
-    }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
 
-    .meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      font-size: 12px;
-      color: #444;
-    }
+  .pill {
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-weight: 500;
+  }
 
-    .pill {
-      border: 1px solid #eee;
-      border-radius: 999px;
-      padding: 3px 10px;
-    }
+  .small {
+    color: var(--muted);
+    font-size: 14px;
+  }
 
-  </style>
+</style>
 </head>
 
 <body>
