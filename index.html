@@ -6,122 +6,179 @@
   <title>Nic Kane</title>
 
   <style>
-  :root {
-    --max: 880px;
-    --accent: #4f46e5;      /* Indigo */
-    --accent-soft: #eef2ff;
-    --bg: #fafafa;
-    --text: #111827;
-    --muted: #4b5563;
+  :root{
+    --max: 900px;
+    --bg: #f7fafc;
+    --card: #ffffff;
+    --text: #0f172a;      /* slate-900 */
+    --muted: #475569;     /* slate-600 */
+    --line: #e2e8f0;      /* slate-200 */
+
+    --accent: #0f4c81;    /* deep academic blue */
+    --accent2: #0ea5a4;   /* teal pop */
+    --accentSoft: #e6f3ff;
+    --pillBg: #eef6ff;
   }
 
-  body {
-    margin: 0;
-    font: 16px/1.7 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-    background: var(--bg);
-    color: var(--text);
+  body{
+    margin:0;
+    font:16px/1.75 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    background: radial-gradient(900px 400px at 10% -10%, rgba(15,76,129,.10), transparent 60%),
+                radial-gradient(900px 400px at 90% 0%, rgba(14,165,164,.10), transparent 55%),
+                var(--bg);
+    color:var(--text);
   }
 
-  .wrap {
-    max-width: var(--max);
-    margin: 0 auto;
-    padding: 60px 20px;
+  .wrap{
+    max-width:var(--max);
+    margin:0 auto;
+    padding:64px 20px;
   }
 
-  h1 {
-    font-size: 42px;
-    margin: 0 0 8px;
-    letter-spacing: -0.5px;
+  h1{
+    font-size:44px;
+    line-height:1.15;
+    margin:0 0 10px;
+    letter-spacing:-0.6px;
   }
 
-  .tagline {
-    margin: 0 0 20px;
-    color: var(--muted);
-    font-size: 18px;
+  .tagline{
+    margin:0 0 18px;
+    color:var(--muted);
+    font-size:18px;
   }
 
-  h2 {
-    font-size: 22px;
-    margin-bottom: 14px;
-    color: var(--accent);
+  .toplinks{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin: 6px 0 0;
   }
 
-  a {
-    color: var(--accent);
-    text-decoration: none;
-    font-weight: 500;
+  .btnlink{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:10px 12px;
+    border-radius:12px;
+    border:1px solid var(--line);
+    background:rgba(255,255,255,.75);
+    backdrop-filter: blur(6px);
+    text-decoration:none;
+    color:var(--text);
+    transition: transform .12s ease, border-color .12s ease, box-shadow .12s ease;
+  }
+  .btnlink:hover{
+    transform: translateY(-1px);
+    border-color: rgba(15,76,129,.35);
+    box-shadow: 0 12px 28px rgba(2,6,23,.08);
   }
 
-  a:hover {
-    text-decoration: underline;
+  a{ color: var(--accent); }
+  a:hover{ opacity:.9; }
+
+  hr{
+    border:0;
+    border-top:1px solid var(--line);
+    margin:42px 0;
   }
 
-  hr {
-    border: 0;
-    border-top: 1px solid #e5e7eb;
-    margin: 40px 0;
+  h2{
+    font-size:22px;
+    margin:0 0 14px;
+    color:var(--accent);
   }
 
-  .toplinks a {
-    margin-right: 18px;
-  }
+  p{ margin: 0 0 14px; }
 
   /* ===== Project Tiles ===== */
-
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 18px;
-    margin-top: 20px;
+  .grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap:18px;
+    margin-top:18px;
   }
 
-  .tile {
-    display: block;
-    padding: 20px;
-    border-radius: 18px;
-    background: white;
-    border: 1px solid #e5e7eb;
-    transition: all 0.15s ease;
+  .tile{
+    display:block;
+    padding:20px;
+    border-radius:18px;
+    border:1px solid var(--line);
+    background: linear-gradient(180deg, rgba(255,255,255,.95), rgba(255,255,255,1));
+    text-decoration:none;
+    color:inherit;
+    transition: transform .14s ease, box-shadow .14s ease, border-color .14s ease;
+    position:relative;
+    overflow:hidden;
   }
 
-  .tile:hover {
+  .tile::before{
+    content:"";
+    position:absolute;
+    inset:-2px;
+    background: radial-gradient(420px 180px at 20% 0%, rgba(15,76,129,.20), transparent 60%),
+                radial-gradient(420px 180px at 90% 10%, rgba(14,165,164,.18), transparent 55%);
+    opacity:0;
+    transition: opacity .14s ease;
+    pointer-events:none;
+  }
+
+  .tile:hover{
     transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(79, 70, 229, 0.15);
-    border-color: var(--accent);
+    box-shadow: 0 22px 50px rgba(2,6,23,.12);
+    border-color: rgba(15,76,129,.35);
+  }
+  .tile:hover::before{ opacity:1; }
+
+  .tile h3{
+    margin:0 0 8px;
+    font-size:18px;
+    color:var(--text);
+    position:relative;
   }
 
-  .tile h3 {
-    margin: 0 0 8px;
-    font-size: 18px;
-    color: var(--text);
+  .tile p{
+    margin:0 0 12px;
+    font-size:14px;
+    color:var(--muted);
+    position:relative;
   }
 
-  .tile p {
-    margin: 0 0 12px;
-    font-size: 14px;
-    color: var(--muted);
+  .meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    position:relative;
   }
 
-  .meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-
-  .pill {
-    font-size: 12px;
-    padding: 4px 10px;
-    border-radius: 999px;
-    background: var(--accent-soft);
+  .pill{
+    font-size:12px;
+    padding:4px 10px;
+    border-radius:999px;
+    background: var(--pillBg);
+    border:1px solid rgba(15,76,129,.12);
     color: var(--accent);
-    font-weight: 500;
+    font-weight:600;
   }
 
-  .small {
-    color: var(--muted);
-    font-size: 14px;
+  .pill.r{
+    background: rgba(25,118,210,.10);
+    border-color: rgba(25,118,210,.20);
+    color: #1976d2;
   }
 
+  .small{
+    color:var(--muted);
+    font-size:14px;
+  }
+
+  code{
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.95em;
+    background: rgba(2,6,23,.05);
+    padding: 2px 6px;
+    border-radius: 8px;
+  }
 </style>
 </head>
 
