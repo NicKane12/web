@@ -6,248 +6,488 @@
   <title>Nic Kane</title>
 
   <style>
-  :root{
-    --max: 900px;
-    --bg: #f7fafc;
-    --card: #ffffff;
-    --text: #0f172a;      /* slate-900 */
-    --muted: #475569;     /* slate-600 */
-    --line: #e2e8f0;      /* slate-200 */
+    :root{
+      --max: 1040px;
+      --bg: #f8fbff;
+      --card: rgba(255,255,255,.88);
+      --card-solid: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --line: #dbe7f3;
 
-    --accent: #0f4c81;    /* deep academic blue */
-    --accent2: #0ea5a4;   /* teal pop */
-    --accentSoft: #e6f3ff;
-    --pillBg: #eef6ff;
-  }
+      --accent: #1d4ed8;
+      --accent2: #0f766e;
+      --accent3: #7c3aed;
+      --accent4: #ea580c;
 
-  body{
-    margin:0;
-    font:16px/1.75 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-    background: radial-gradient(900px 400px at 10% -10%, rgba(15,76,129,.10), transparent 60%),
-                radial-gradient(900px 400px at 90% 0%, rgba(14,165,164,.10), transparent 55%),
-                var(--bg);
-    color:var(--text);
-  }
+      --blue-soft: #e8f1ff;
+      --teal-soft: #e8fbf8;
+      --violet-soft: #f1ebff;
+      --orange-soft: #fff2e8;
 
-  .wrap{
-    max-width:var(--max);
-    margin:0 auto;
-    padding:64px 20px;
-  }
+      --shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+      --shadow-hover: 0 28px 60px rgba(15, 23, 42, 0.14);
+    }
 
-  h1{
-    font-size:44px;
-    line-height:1.15;
-    margin:0 0 10px;
-    letter-spacing:-0.6px;
-  }
+    *{
+      box-sizing:border-box;
+    }
 
-  .tagline{
-    margin:0 0 18px;
-    color:var(--muted);
-    font-size:18px;
-  }
+    body{
+      margin:0;
+      font:16px/1.75 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(700px 320px at 0% 0%, rgba(29,78,216,.14), transparent 60%),
+        radial-gradient(700px 320px at 100% 0%, rgba(15,118,110,.13), transparent 60%),
+        radial-gradient(800px 400px at 50% 100%, rgba(124,58,237,.08), transparent 60%),
+        linear-gradient(180deg, #f8fbff 0%, #f6fbfa 100%);
+    }
 
-  .toplinks{
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px;
-    margin: 6px 0 0;
-  }
+    a{
+      color:var(--accent);
+      text-decoration:none;
+    }
 
-  .btnlink{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    padding:10px 12px;
-    border-radius:12px;
-    border:1px solid var(--line);
-    background:rgba(255,255,255,.75);
-    backdrop-filter: blur(6px);
-    text-decoration:none;
-    color:var(--text);
-    transition: transform .12s ease, border-color .12s ease, box-shadow .12s ease;
-  }
-  .btnlink:hover{
-    transform: translateY(-1px);
-    border-color: rgba(15,76,129,.35);
-    box-shadow: 0 12px 28px rgba(2,6,23,.08);
-  }
+    a:hover{
+      opacity:.95;
+    }
 
-  a{ color: var(--accent); }
-  a:hover{ opacity:.9; }
+    .wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:64px 20px 72px;
+    }
 
-  hr{
-    border:0;
-    border-top:1px solid var(--line);
-    margin:42px 0;
-  }
+    .hero{
+      position:relative;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.7);
+      background:linear-gradient(135deg, rgba(255,255,255,.82), rgba(255,255,255,.72));
+      backdrop-filter: blur(10px);
+      border-radius:28px;
+      padding:42px 36px;
+      box-shadow:var(--shadow);
+    }
 
-  h2{
-    font-size:22px;
-    margin:0 0 14px;
-    color:var(--accent);
-  }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:auto -60px -60px auto;
+      width:220px;
+      height:220px;
+      background:radial-gradient(circle, rgba(124,58,237,.12), transparent 70%);
+      pointer-events:none;
+    }
 
-  p{ margin: 0 0 14px; }
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:-60px auto auto -60px;
+      width:240px;
+      height:240px;
+      background:radial-gradient(circle, rgba(29,78,216,.12), transparent 70%);
+      pointer-events:none;
+    }
 
-  /* ===== Project Tiles ===== */
-  .grid{
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap:18px;
-    margin-top:18px;
-  }
+    .hero-content{
+      position:relative;
+      z-index:1;
+    }
 
-  .tile{
-    display:block;
-    padding:20px;
-    border-radius:18px;
-    border:1px solid var(--line);
-    background: linear-gradient(180deg, rgba(255,255,255,.95), rgba(255,255,255,1));
-    text-decoration:none;
-    color:inherit;
-    transition: transform .14s ease, box-shadow .14s ease, border-color .14s ease;
-    position:relative;
-    overflow:hidden;
-  }
+    h1{
+      margin:0 0 10px;
+      font-size:48px;
+      line-height:1.1;
+      letter-spacing:-0.9px;
+    }
 
-  .tile::before{
-    content:"";
-    position:absolute;
-    inset:-2px;
-    background: radial-gradient(420px 180px at 20% 0%, rgba(15,76,129,.20), transparent 60%),
-                radial-gradient(420px 180px at 90% 10%, rgba(14,165,164,.18), transparent 55%);
-    opacity:0;
-    transition: opacity .14s ease;
-    pointer-events:none;
-  }
+    .tagline{
+      margin:0 0 16px;
+      color:var(--muted);
+      font-size:19px;
+    }
 
-  .tile:hover{
-    transform: translateY(-4px);
-    box-shadow: 0 22px 50px rgba(2,6,23,.12);
-    border-color: rgba(15,76,129,.35);
-  }
-  .tile:hover::before{ opacity:1; }
+    .intro{
+      max-width:760px;
+      margin:0;
+      font-size:17px;
+      color:#1e293b;
+    }
 
-  .tile h3{
-    margin:0 0 8px;
-    font-size:18px;
-    color:var(--text);
-    position:relative;
-  }
+    .hero-badges{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:22px;
+    }
 
-  .tile p{
-    margin:0 0 12px;
-    font-size:14px;
-    color:var(--muted);
-    position:relative;
-  }
+    .hero-badge{
+      display:inline-flex;
+      align-items:center;
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:13px;
+      font-weight:600;
+      border:1px solid transparent;
+    }
 
-  .meta{
-    display:flex;
-    flex-wrap:wrap;
-    gap:8px;
-    position:relative;
-  }
+    .hero-badge.blue{
+      background:var(--blue-soft);
+      color:var(--accent);
+      border-color:rgba(29,78,216,.12);
+    }
 
-  .pill{
-    font-size:12px;
-    padding:4px 10px;
-    border-radius:999px;
-    background: var(--pillBg);
-    border:1px solid rgba(15,76,129,.12);
-    color: var(--accent);
-    font-weight:600;
-  }
+    .hero-badge.teal{
+      background:var(--teal-soft);
+      color:var(--accent2);
+      border-color:rgba(15,118,110,.12);
+    }
 
-  .pill.r{
-    background: rgba(25,118,210,.10);
-    border-color: rgba(25,118,210,.20);
-    color: #1976d2;
-  }
+    .hero-badge.violet{
+      background:var(--violet-soft);
+      color:var(--accent3);
+      border-color:rgba(124,58,237,.12);
+    }
 
-  .small{
-    color:var(--muted);
-    font-size:14px;
-  }
+    section{
+      margin-top:42px;
+    }
 
-  code{
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    font-size: 0.95em;
-    background: rgba(2,6,23,.05);
-    padding: 2px 6px;
-    border-radius: 8px;
-  }
-</style>
+    .section-head{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:16px;
+    }
+
+    h2{
+      margin:0;
+      font-size:24px;
+      color:var(--text);
+      letter-spacing:-0.3px;
+    }
+
+    .section-note{
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .about-card{
+      background:var(--card);
+      border:1px solid rgba(255,255,255,.7);
+      border-radius:24px;
+      padding:28px;
+      box-shadow:var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .about-card p{
+      margin:0;
+      color:#243041;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(290px, 1fr));
+      gap:22px;
+    }
+
+    .tile{
+      display:block;
+      overflow:hidden;
+      border-radius:24px;
+      background:var(--card-solid);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      color:inherit;
+      transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+
+    .tile:hover{
+      transform:translateY(-6px);
+      box-shadow:var(--shadow-hover);
+      border-color:rgba(29,78,216,.25);
+    }
+
+    .tile-image{
+      height:180px;
+      background-size:cover;
+      background-position:center;
+      background-repeat:no-repeat;
+      position:relative;
+    }
+
+    .tile-image::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg, rgba(15,23,42,.08), rgba(15,23,42,.02));
+    }
+
+    .tile-image.placeholder-blue{
+      background:
+        linear-gradient(135deg, rgba(29,78,216,.84), rgba(14,165,233,.65)),
+        url("https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80");
+    }
+
+    .tile-image.placeholder-teal{
+      background:
+        linear-gradient(135deg, rgba(15,118,110,.84), rgba(20,184,166,.58)),
+        url("https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&w=1200&q=80");
+    }
+
+    .tile-image.placeholder-violet{
+      background:
+        linear-gradient(135deg, rgba(124,58,237,.84), rgba(236,72,153,.52)),
+        url("https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80");
+    }
+
+    .tile-body{
+      padding:20px 20px 18px;
+    }
+
+    .tile h3{
+      margin:0 0 8px;
+      font-size:20px;
+      line-height:1.25;
+    }
+
+    .tile p{
+      margin:0 0 14px;
+      color:var(--muted);
+      font-size:14.5px;
+    }
+
+    .meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-bottom:14px;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      padding:5px 10px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.01em;
+    }
+
+    .pill.r{
+      background:var(--blue-soft);
+      color:#2563eb;
+      border:1px solid rgba(37,99,235,.14);
+    }
+
+    .pill.stat{
+      background:var(--violet-soft);
+      color:#7c3aed;
+      border:1px solid rgba(124,58,237,.14);
+    }
+
+    .pill.time{
+      background:var(--teal-soft);
+      color:#0f766e;
+      border:1px solid rgba(15,118,110,.14);
+    }
+
+    .pill.health{
+      background:var(--orange-soft);
+      color:#ea580c;
+      border:1px solid rgba(234,88,12,.14);
+    }
+
+    .tile-footer{
+      font-size:14px;
+      font-weight:600;
+      color:var(--accent);
+    }
+
+    .footer-links{
+      margin-top:48px;
+      padding:28px 22px;
+      border-radius:24px;
+      background:linear-gradient(135deg, rgba(255,255,255,.82), rgba(255,255,255,.72));
+      border:1px solid rgba(255,255,255,.7);
+      box-shadow:var(--shadow);
+      backdrop-filter: blur(10px);
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:16px;
+    }
+
+    .toplinks{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:12px;
+    }
+
+    .btnlink{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:11px 15px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:#ffffff;
+      color:var(--text);
+      font-weight:600;
+      transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+      box-shadow:0 10px 24px rgba(15,23,42,.05);
+    }
+
+    .btnlink:hover{
+      transform:translateY(-2px);
+      border-color:rgba(29,78,216,.24);
+      box-shadow:0 14px 28px rgba(15,23,42,.08);
+    }
+
+    .small{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+      text-align:center;
+    }
+
+    .small strong{
+      color:#334155;
+    }
+
+    @media (max-width: 700px){
+      .wrap{
+        padding:36px 16px 52px;
+      }
+
+      .hero{
+        padding:30px 22px;
+        border-radius:24px;
+      }
+
+      h1{
+        font-size:38px;
+      }
+
+      .tagline{
+        font-size:17px;
+      }
+
+      .intro{
+        font-size:16px;
+      }
+
+      .tile-image{
+        height:160px;
+      }
+    }
+  </style>
 </head>
 
 <body>
   <main class="wrap">
-    <h1>Nic Kane</h1>
-    <p class="tagline">Data Science · ML · R and Python</p>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Nic Kane</h1>
+        <p class="tagline">Data Science · Machine Learning · R · Python</p>
+        <p class="intro">
+          Statistical data science graduate student at San Francisco State with a background in mathematics education.
+          I enjoy using data, modeling, and statistical thinking to solve practical problems across different domains.
+        </p>
 
-
-
-    <hr />
-
-    <h2>About</h2>
-    <p>
-      Thanks for checking out my portfolio! I am a statistical data science graduate student at San Francisco State. After years of teaching mathematics,
-      I decided to go back for more math and focus more on applications. I have a passion for applying mathematics to all areas of life and enjoy the 
-      broad applications data science offers. Here you can find my resume and some projects.
-    </p>
-
-    <hr />
-
-    <h2>Projects</h2>
-
-    <div class="grid">
-
-      <a class="tile" href="https://github.com/NicKane12/credit-approval-statistical-learning" target="_blank">
-        <h3>Credit Approval</h3>
-        <p>Using statistical learning methods to predict credit approval.</p>
-        <div class="meta">
-          <span class="pill">R</span>
-          <span class="pill">Statistical Learning</span>
+        <div class="hero-badges">
+          <span class="hero-badge blue">Statistical Modeling</span>
+          <span class="hero-badge teal">Time Series</span>
+          <span class="hero-badge violet">Applied Machine Learning</span>
         </div>
-      </a>
+      </div>
+    </section>
 
-      <a class="tile" href="https://github.com/NicKane12/time-series-vinyl-sales" target="_blank">
-        <h3>Vinyl Sales Analysis</h3>
-        <p>Using time series analysis to forecast future vinyl record sales in the U.S.</p>
-        <div class="meta">
-          <span class="pill">R</span>
-          <span class="pill">Time Series</span>
-        </div>
-      </a>
+    <section>
+      <div class="section-head">
+        <h2>About</h2>
+      </div>
 
-      <a class="tile" href="https://github.com/NicKane12/health-outcomes-logistic-regression">
-        <h3>Heart Disease</h3>
-        <p>Predicting chance of death for those with heart disease.</p>
-        <div class="meta">
-          <span class="pill">R</span>
-          <span class="pill">Categorical Data</span>
-        </div>
-      </a>
-    </div>
+      <div class="about-card">
+        <p>
+          Thanks for checking out my portfolio. I am a statistical data science graduate student at San Francisco State.
+          After years of teaching mathematics, I returned to school to go deeper into mathematics and focus on applied work.
+          Data science appeals to me because it connects mathematical thinking with real questions, real decisions, and real impact.
+          Below you can find a few selected projects, along with links to my resume, GitHub, LinkedIn, and email.
+        </p>
+      </div>
+    </section>
 
-<hr />
+    <section>
+      <div class="section-head">
+        <h2>Projects</h2>
+        <div class="section-note">Selected work in R, machine learning, and statistical analysis</div>
+      </div>
 
-<div class="toplinks" style="justify-content:center; margin-top: 10px;">
-  <a class="btnlink" href="Resume.pdf" target="_blank" rel="noopener">Resume</a>
-  <a class="btnlink" href="https://github.com/nickane12" target="_blank" rel="noopener">GitHub</a>
-  <a class="btnlink" href="https://linkedin.com/in/nic-kane" target="_blank" rel="noopener">LinkedIn</a>
-  <a class="btnlink" href="mailto:nicmuellerkane@gmail.com">Email</a>
-</div>
+      <div class="grid">
+        <a class="tile" href="https://github.com/NicKane12/credit-approval-statistical-learning" target="_blank" rel="noopener">
+          <div class="tile-image placeholder-blue"></div>
+          <div class="tile-body">
+            <h3>Credit Approval</h3>
+            <p>Using statistical learning methods to predict whether a credit application will be approved.</p>
+            <div class="meta">
+              <span class="pill r">R</span>
+              <span class="pill stat">Statistical Learning</span>
+            </div>
+            <div class="tile-footer">View project →</div>
+          </div>
+        </a>
 
- <p class="small" style="text-align:center; margin-top: 18px;">
-  Last updated: <span id="d"></span>
-</p>
+        <a class="tile" href="https://github.com/NicKane12/time-series-vinyl-sales" target="_blank" rel="noopener">
+          <div class="tile-image placeholder-teal"></div>
+          <div class="tile-body">
+            <h3>Vinyl Sales Analysis</h3>
+            <p>Applying time series analysis to study trends and forecast future vinyl record sales in the United States.</p>
+            <div class="meta">
+              <span class="pill r">R</span>
+              <span class="pill time">Time Series</span>
+            </div>
+            <div class="tile-footer">View project →</div>
+          </div>
+        </a>
+
+        <a class="tile" href="https://github.com/NicKane12/health-outcomes-logistic-regression" target="_blank" rel="noopener">
+          <div class="tile-image placeholder-violet"></div>
+          <div class="tile-body">
+            <h3>Heart Disease</h3>
+            <p>Using logistic regression to estimate mortality risk for patients with heart disease.</p>
+            <div class="meta">
+              <span class="pill r">R</span>
+              <span class="pill health">Categorical Data</span>
+            </div>
+            <div class="tile-footer">View project →</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="footer-links">
+      <div class="toplinks">
+        <a class="btnlink" href="Resume.pdf" target="_blank" rel="noopener">Resume</a>
+        <a class="btnlink" href="https://github.com/nickane12" target="_blank" rel="noopener">GitHub</a>
+        <a class="btnlink" href="https://linkedin.com/in/nic-kane" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btnlink" href="mailto:nicmuellerkane@gmail.com">Email</a>
+      </div>
+
+      <p class="small"><strong>Last updated:</strong> <span id="d"></span></p>
+    </section>
+  </main>
 
   <script>
     document.getElementById("d").textContent =
-      new Date().toLocaleDateString(undefined, { year: "numeric", month: "short" });
+      new Date().toLocaleDateString(undefined, {
+        year: "numeric",
+        month: "short"
+      });
   </script>
 </body>
 </html>
